@@ -1,0 +1,7 @@
+.new-pet-wrapper {
+    width: 400px;
+}
+.new-pet-form {
+    display: flex;
+    flex-direction: column;
+}

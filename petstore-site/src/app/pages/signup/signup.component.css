@@ -1,0 +1,9 @@
+.signup-card {
+    width: 400px;
+    margin-top: 10px;
+}
+.signup-form,
+.confirmation-form {
+    display: flex;
+    flex-direction: column;
+}

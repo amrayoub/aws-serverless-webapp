@@ -1,0 +1,18 @@
+<div class="center-align">
+    <mat-card class="login-card">
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+            <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)" class="login-form" novalidate>
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email" type="email" autocomplete="off" required />
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Password" formControlName="password" type="password" autocomplete="off" required />
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button form="login-form" color="primary" [disabled]="loginForm.invalid">Login</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

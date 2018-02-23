@@ -1,0 +1,16 @@
+<div class="pet-viewer-wrapper">
+    <div class="pet-viewer-title">
+        <div class="pet-viewer-title-spacer">My Pets</div>
+        <button mat-raised-button color="primary" (click)="openDialog()">Add new pet</button>
+    </div>
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let pet of pets">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ pet.petName }}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ pet.petDescription }}</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

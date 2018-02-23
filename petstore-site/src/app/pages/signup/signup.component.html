@@ -1,0 +1,39 @@
+<div class="center-align">
+    <mat-card class="signup-card" *ngIf="!successfullySignup">
+        <mat-card-title>Register</mat-card-title>
+        <mat-card-content>
+            <form id="signup-form" [formGroup]="signupForm" (ngSubmit)="onSubmitSignup(signupForm.value)" class="signup-form" novalidate>
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email" type="email" autocomplete="off" required />
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Password" formControlName="password" type="password" autocomplete="off" required />
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button form="signup-form" color="primary" [disabled]="signupForm.invalid">Signup</button>
+        </mat-card-actions>
+        <mat-card-footer align="end">
+            <button mat-button (click)="successfullySignup = true" color="primary">Confirm registration</button>
+        </mat-card-footer>
+    </mat-card>
+    <mat-card class="signup-card" *ngIf="successfullySignup">
+        <mat-card-title>Confirm registration</mat-card-title>
+        <mat-card-content>
+            <form id="confirmation-form" [formGroup]="confirmationForm" (ngSubmit)="onSubmitConfirmation(confirmationForm.value)" class="confirmation-form"
+                novalidate>
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email" type="email" autocomplete="off" required />
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Confirmation code" formControlName="confirmationCode" type="text" autocomplete="off" required
+                    />
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button form="confirmation-form" color="primary" [disabled]="confirmationForm.invalid">Confirm</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

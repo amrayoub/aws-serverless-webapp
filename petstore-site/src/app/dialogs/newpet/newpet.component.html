@@ -1,0 +1,18 @@
+<div class="new-pet-wrapper">
+    <h1 mat-dialog-title>Add new pet</h1>
+    <div mat-dialog-content>
+        <form id="new-pet-form" [formGroup]="newPetForm" (ngSubmit)="onSubmitCreatePet(newPetForm.value)" class="new-pet-form" novalidate>
+            <mat-form-field>
+                <input matInput placeholder="Name" formControlName="petName" type="text" autocomplete="off" required/>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput placeholder="Description" formControlName="petDescription" matTextareaAutosize matAutosizeMinRows="2"
+                    matAutosizeMaxRows="5" autocomplete="off" required></textarea>
+            </mat-form-field>
+        </form>
+    </div>
+    <div mat-dialog-actions align="end">
+        <button mat-raised-button (click)="onNoClick()" type="button">Cancel</button>
+        <button mat-raised-button form="new-pet-form" type="submit" color="primary" [disabled]="newPetForm.invalid">Ok</button>
+    </div>
+</div>

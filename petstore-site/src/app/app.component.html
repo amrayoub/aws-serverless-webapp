@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="app-toolbar mat-elevation-z6">
+    <nav class="main-nav">
+        <div>
+            <span class="site-name">Petstore</span>
+        </div>
+        <div class="flex-spacer"></div>
+        <div *ngIf="!(auth.loggedIn | async)">
+                <a mat-button [routerLink]="['/']">Login</a>
+            </div>
+        <div *ngIf="(auth.loggedIn | async)">
+            <a mat-button (click)="onClickLogout()">Logout</a>
+        </div>
+        <div *ngIf="!(auth.loggedIn | async)">
+            <a mat-button [routerLink]="['/signup']">Register</a>
+        </div>
+    </nav>
+</mat-toolbar>
+
+<div class="outlet-container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,22 @@
+.app-toolbar {
+  display: flex;
+}
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+}
+.main-nav .site-name {
+    font-size: 1.5em;
+}
+.main-nav a {
+  font-size: 0.8em;
+  padding: 5px;
+}
+.flex-spacer {
+  flex-grow: 1;
+}

@@ -1,0 +1,4 @@
+petstore-lambda/.settings
+petstore-lambda/target
+petstore-site/dist
+petstore-site/node_modules
